@@ -83,7 +83,7 @@ class Server:
         self.filesize = int(self.filesize)
 
         # 存储文件和提取码到数据库
-        save_time = int(time.time()) + 10  # 设置保存时间为10秒
+        save_time = int(time.time()) + 1*24*3600  # 设置保存时间为1天
         self.cursor.execute("INSERT INTO files (code, filename, save_time) VALUES (?, ?, ?)", (self.code, self.filename, save_time))
         self.conn.commit()
     
