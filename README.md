@@ -59,7 +59,7 @@
 ![11](/11.png)
 
 ###     使用方法：
-将server文件夹放在服务器，运行sermain.py;将client文件夹放在本地，运行main.py
+将server文件夹放在服务器，运行sermain.py;  将client文件夹放在本地，运行main.py
 ## 提示：
 
 如果运行不了请查看相应的库是否安装完整！
