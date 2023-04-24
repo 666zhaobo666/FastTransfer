@@ -120,6 +120,7 @@ class Ui_MainWindow(object):
 
     # 发送文件
     def send(self):
+        self.text.append('请稍后，文件正在上传中......')
         host = self.lineEdit_ip.text()
         filename = self.lineEdit_file.text()
         if len(host) == 0 or len(filename) == 0:
@@ -127,8 +128,7 @@ class Ui_MainWindow(object):
         else:
             self.tcpclient.setcode()
             self.lineEdit_code.setText(self.tcpclient.code)
-            self.text.append('该文件提取码为:'+self.tcpclient.code+'，'+'请妥善保存！')
-            self.text.append('请稍后，文件正在上传中......')
+            self.text.append('该文件提取码为:'+self.tcpclient.code+'，'+'请妥善保存！')     
             self.tcpclient.connect(host,self.port)
             self.tcpclient.send(filename)
             self.text.append('文件上传成功！')
@@ -148,12 +148,12 @@ class Ui_MainWindow(object):
 
     # 下载文件
     def download(self):
+        self.text.append('请耐心等待，文件正在下载中...')
         code = self.lineEdit_code.text()
         host = self.lineEdit_ip.text()
         local_file = self.lineEdit_path.text()
         remote_file = '/tcpfiles'
         if host and local_file and code:
-            self.text.append('请耐心等待，文件正在下载中...')
             self.tcpclient.download(code,host,self.download_port,self.user,self.passwd,remote_file,local_file)
             self.text.append('文件下载完成√√')
         else:
