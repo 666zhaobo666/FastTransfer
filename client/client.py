@@ -128,6 +128,7 @@ class Ui_MainWindow(object):
             self.tcpclient.setcode()
             self.lineEdit_code.setText(self.tcpclient.code)
             self.text.append('该文件提取码为:'+self.tcpclient.code+'，'+'请妥善保存！')
+            self.text.append('请稍后，文件正在上传中......')
             self.tcpclient.connect(host,self.port)
             self.tcpclient.send(filename)
             self.text.append('文件上传成功！')
