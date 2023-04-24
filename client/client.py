@@ -9,6 +9,7 @@ class Ui_MainWindow(object):
         # 远程服务器用户名与密码
         self.user = 'root'
         self.passwd = 'xxxxxxx'
+        self.port = xxxx
         #####################################################################
         MainWindow.setObjectName("MainWindow")
         MainWindow.resize(985, 397)
@@ -126,7 +127,7 @@ class Ui_MainWindow(object):
             self.tcpclient.setcode()
             self.lineEdit_code.setText(self.tcpclient.code)
             self.text.append('该文件提取码为:'+self.tcpclient.code+'，'+'请妥善保存！')
-            self.tcpclient.connect(host,1234)
+            self.tcpclient.connect(host,self.port)
             self.tcpclient.send(filename)
             self.text.append('文件上传成功！')
             self.tcpclient.close()
