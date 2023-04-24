@@ -10,7 +10,8 @@ class Server:
         ######################################################
         ##############  将下列IP与PORT改为自己的  ###############
         self.server_host = 'xxxxxxx'
-        self.server_port = 1234
+        self.server_port = xxxx
+        self.server_download_port = xxxx
         ######################################################
         ######################################################
         # 间隔符
@@ -38,7 +39,7 @@ class Server:
                             save_time INT NOT NULL);''')
     def code_set_socket(self):
         self.scode = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-        self.scode.bind((self.server_host,2234))
+        self.scode.bind((self.server_host,self.server_download_port))
         # 监听数
         self.scode.listen(128)
 
