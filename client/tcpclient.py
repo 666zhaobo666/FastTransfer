@@ -39,9 +39,9 @@ class Tcpclient:
         self.s.close()
 
     # 文件下载
-    def download(self,code,host,user,passwd,remote_file,local_file):
+    def download(self,code,host,dport,user,passwd,remote_file,local_file):
         # 从远程服务器获取文件名
-        self.connect(host,2234)
+        self.connect(host,dport)
         self.s.sendall(f'{code}'.encode())
         response = self.s.recv(1024)
         response = response.decode()
