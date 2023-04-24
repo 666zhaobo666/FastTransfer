@@ -10,6 +10,7 @@ class Ui_MainWindow(object):
         self.user = 'root'
         self.passwd = 'xxxxxxx'
         self.port = xxxx
+        self.download_port = xxxx
         #####################################################################
         MainWindow.setObjectName("MainWindow")
         MainWindow.resize(985, 397)
@@ -152,7 +153,7 @@ class Ui_MainWindow(object):
         remote_file = '/tcpfiles'
         if host and local_file and code:
             self.text.append('请耐心等待，文件正在下载中...')
-            self.tcpclient.download(code,host,self.user,self.passwd,remote_file,local_file)
+            self.tcpclient.download(code,host,self.download_port,self.user,self.passwd,remote_file,local_file)
             self.text.append('文件下载完成√√')
         else:
             self.text.append('警告：主机IP地址、提取码、保存路径无效，请检查！！！')
