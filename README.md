@@ -1,4 +1,4 @@
-# FastTranslate
+# FastTransfer
 ​	快速上传文件，使用提取码即可实现指定文件的快速下载。
 
 ## 开发环境
